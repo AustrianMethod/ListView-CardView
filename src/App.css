@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+body {
+    background: #ffffff;
+}
+
+p, h3, .material-icons {
+    color: #000000;
+}
+
+.store {
+    text-align: right;
+}
+
+.cardContainer {
+  display: grid;
+  grid-template: repeat(1, 1fr) / repeat(3, 1fr);
+  gap: 10px;
+}
+
+.card {
+    background: #F5F5F6;
+}
+
+.cardImg {
+    width: 300px;
+}
+
+.itemContainer {
+    display: grid;
+    grid-template: repeat(1, 1fr) / repeat(1, 1fr);
+    gap: 10px;
+}
+
+.itemImg {
+    width: 100px;
+}
+
+.item {
+    display: flex;
+    gap: 200px;
+}
