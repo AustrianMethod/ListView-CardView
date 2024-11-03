@@ -4,16 +4,11 @@ import './App.css'
 function ShopCard({item}) {
   return (
     <figure className='card'>
-      <div className='cardNameColor'>
-        <h3 className='cardName'>{item.name}</h3>
-        <p className='cardColor'>{item.color}</p>
-      </div>
-      <div className='cardImgWrapper'>
-        <img className='cardImg' src={item.img}/>
-      </div>
-      <div className='cardPriceAdd'>
-        <p className='cardPrice'>{item.price}</p>
-      </div>
+      <h3 className='cardName'>{item.name}</h3>
+      <p className='cardColor'>{item.color}</p>
+      <img className='cardImg' src={item.img}/>
+      <p className='cardPrice'>{'$' + item.price}</p>
+      <button className='addToCart'>Add to Cart</button>
     </figure>
   )
 }
@@ -21,12 +16,13 @@ function ShopCard({item}) {
 function ShopItem({item}) {
   return (
     <figure className='item'>
-      <div className='itemImgWrapper'>
+      <div className='imgWrapper'>
         <img className='itemImg' src={item.img}/>
       </div>
       <h3 className='itemName'>{item.name}</h3>
       <p className='itemColor'>{item.color}</p>
-      <p className='itemPrice'>{item.price}</p>
+      <p className='itemPrice'>{'$' + item.price}</p>
+      <button className='addToCartItem'>Add to Cart</button>
     </figure>
   )
 }
@@ -104,7 +100,6 @@ function Store() {
       {view === "view_module" 
         ? <ListView items={products}/>
         : <CardsView cards={products}/>
-       
       }
     </div>
   )
