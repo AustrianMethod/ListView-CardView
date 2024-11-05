@@ -3,7 +3,7 @@ import './App.css'
 
 function ShopCard({item}) {
   return (
-    <figure className='card'>
+    <figure className='card' >
       <h3 className='cardName'>{item.name}</h3>
       <p className='cardColor'>{item.color}</p>
       <img className='cardImg' src={item.img}/>
@@ -15,7 +15,7 @@ function ShopCard({item}) {
 
 function ShopItem({item}) {
   return (
-    <figure className='item'>
+    <figure className='item' > 
       <div className='imgWrapper'>
         <img className='itemImg' src={item.img}/>
       </div>
@@ -31,7 +31,7 @@ function CardsView({cards}) {
   return (
     <div className='cardContainer'>
       {cards.map((item)=> (
-        <ShopCard item={item}/>
+        <ShopCard key={item.name} item={item}/>
       ))}
     </div>
   )
@@ -41,7 +41,7 @@ function ListView({items}) {
   return (
     <div className='itemContainer'>
       {items.map((item)=> (
-        <ShopItem item={item}/>
+        <ShopItem key={item.name} item={item}/>
       ))}
     </div>
   )
@@ -88,7 +88,7 @@ function Store() {
     img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/layouts/img/5.jpg"
   }];
 
-  const [view, setView] = useState("iew_list");
+  const [view, setView] = useState("view_list");
   const onSwitch = view => {
     view === "view_list" 
       ? setView("view_module") 
